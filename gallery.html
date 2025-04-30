@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | My Photography Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Photography Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="gallery">
+      <h2>Gallery</h2>
+      <div class="photo-grid">
+        <a href="#" class="lightbox" data-img="images/photo1.jpg">
+          <img src="images/photo1.jpg" alt="Photo1">
+        </a>
+        <a href="#" class="lightbox" data-img="images/photo2.jpg">
+          <img src="images/photo2.jpg" alt="Photo2">
+        </a>
+        <a href="#" class="lightbox" data-img="images/photo3.jpg">
+          <img src="images/photo3.jpg" alt="Photo3">
+        </a>
+        <a href="#" class="lightbox" data-img="images/photo4.jpg">
+          <img src="images/photo4.jpg" alt="Photo4">
+        </a>
+        <a href="#" class="lightbox" data-img="images/photo5.jpg">
+          <img src="images/photo5.jpg" alt="Photo5">
+        </a>
+        <!-- Add more images as needed -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightboxImage">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mohd Muddassir Ahmed</p>
+  </footer>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("lightboxModal");
+
+    // Get the image and insert it inside the modal
+    var lightboxImage = document.getElementById("lightboxImage");
+
+    // Get all the links that trigger the lightbox
+    var lightboxLinks = document.querySelectorAll(".lightbox");
+
+    // When an image is clicked, open the modal
+    lightboxLinks.forEach(function(link) {
+      link.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        var imgSrc = link.getAttribute("data-img");
+        lightboxImage.src = imgSrc; // Set the image source to the clicked image
+        modal.style.display = "flex"; // Show the modal
+      });
+    });
+
+    // When the user clicks on the close button (x), close the modal
+    document.querySelector(".close").addEventListener("click", function() {
+      modal.style.display = "none"; // Hide the modal
+    });
+
+    // When the user clicks anywhere outside the image, close the modal
+    window.addEventListener("click", function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none"; // Hide the modal if clicked outside the image
+      }
+    });
+  </script>
+</body>
+</html>
+
