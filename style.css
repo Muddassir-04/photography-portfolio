@@ -137,4 +137,53 @@ footer {
     cursor: pointer;
     color: white;
   }
-  
+
+/* 📱 Mobile Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  #toggle-theme {
+    top: 10px;
+    right: 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
