@@ -48,6 +48,15 @@
     </section>
   </main>
 
+  <!-- Lightbox Modal with navigation arrows -->
+<div id="lightboxModal" class="lightbox-modal">
+  <span class="close">&times;</span>
+  <span class="prev">&#10094;</span>
+  <img class="lightbox-content" id="lightboxImage">
+  <span class="next">&#10095;</span>
+</div>
+
+
   <footer>
     <p>&copy; 2025 Mohd Muddassir Ahmed</p>
   </footer>
@@ -57,7 +66,54 @@
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
+
+    const modal = document.getElementById("lightboxModal");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeBtn = document.querySelector(".close");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const lightboxLinks = document.querySelectorAll(".lightbox");
+
+let currentIndex = 0;
+
+// Open modal and display clicked image
+lightboxLinks.forEach((link, index) => {
+  link.addEventListener("click", function () {
+    currentIndex = index;
+    showImage(currentIndex);
+  });
+});
+
+function showImage(index) {
+  const imgSrc = lightboxLinks[index].getAttribute("data-img");
+  lightboxImage.src = imgSrc;
+  modal.style.display = "flex";
+}
+
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Navigate forward
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % lightboxLinks.length;
+  showImage(currentIndex);
+});
+
+// Navigate backward
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + lightboxLinks.length) % lightboxLinks.length;
+  showImage(currentIndex);
+});
+
+// Close if clicked outside image
+window.addEventListener("click", function (event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
   </script>
-  <script src="script.js"></script>
+  
 </body>
 </html>
