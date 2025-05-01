@@ -110,4 +110,31 @@ footer {
     text-decoration: none;
     cursor: pointer;
   }
+
+  /* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+  
+  .dark-mode header,
+  .dark-mode footer {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+  }
+  
+  .dark-mode a {
+    color: #9ecbff;
+  }
+  
+  #toggle-theme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+  }
   

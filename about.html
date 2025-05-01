@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | My Photography Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <button id="toggle-theme">🌙</button>
+
+    <h1>My Photography Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>About Me</h2>
+      <p>Hi, I'm Mohd Muddassir Ahmed — a passionate photographer who loves capturing beautiful moments through the lens. This website showcases some of my favorite work.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mohd Muddassir Ahmed</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+  
+</body>
+</html>

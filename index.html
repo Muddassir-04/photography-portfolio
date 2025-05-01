@@ -8,6 +8,8 @@
 </head>
 <body>
   <header>
+    <button id="toggle-theme">🌙</button>
+
     <h1>My Photography Portfolio</h1>
     <nav>
         <a href="index.html">Home</a>
@@ -28,5 +30,13 @@
   <footer>
     <p>&copy; 2025 Mohd Muddassir Ahmed</p>
   </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+  
 </body>
 </html>
