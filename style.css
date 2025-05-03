@@ -251,6 +251,8 @@ footer {
     left: 50% !important;
     right: auto !important;
     transform: translateX(-50%) !important;
-    bottom: 80px; /* adjust so it doesn't overlap footer */
+    bottom: 0px; /* adjust so it doesn't overlap footer */
   }
 }
+
+
