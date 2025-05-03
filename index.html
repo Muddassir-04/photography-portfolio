@@ -43,5 +43,27 @@
     });
   </script>
   
+  <div class="camera">
+    📷
+  </div>
+  <div id="flash"></div>
+  
+  <audio id="shutterSound" src="camera-shutter.mp3" preload="auto"></audio>
+  
 </body>
+
+<script>
+  const camera = document.querySelector('.camera');
+  const flash = document.getElementById('flash');
+  const shutter = document.getElementById('shutterSound');
+
+  camera.addEventListener('click', () => {
+    flash.style.display = 'block';
+    shutter.play();
+    setTimeout(() => {
+      flash.style.display = 'none';
+    }, 100);
+  });
+</script>
+
 </html>
