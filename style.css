@@ -217,6 +217,19 @@ footer {
   .photo-grid {
     grid-template-columns: 1fr;
   }
+
+  .camera {
+    font-size: 4rem;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    transition: transform 0.2s ease;
+  }
+  .camera:active {
+    transform: scale(0.95);
+  }
 }
 
 .camera {
