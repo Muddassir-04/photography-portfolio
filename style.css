@@ -45,7 +45,7 @@ footer {
   background-color: #222;
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -220,7 +220,7 @@ footer {
 }
 
 .camera {
-  font-size: 5rem;
+  font-size: 4rem;
   cursor: pointer;
   position: fixed;
   bottom: 20px;
