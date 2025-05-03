@@ -245,10 +245,12 @@ footer {
   z-index: 999;
 }
 
+
 @media (max-width: 768px) {
   .camera {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    bottom: 80px; /* adjust so it doesn't overlap footer */
   }
 }
